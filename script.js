@@ -50,15 +50,29 @@ const sideMenu = {
   ]
 };
 
-const dataBase = { 
-  view:"datatable",
+const dataBase = {   view:"datatable",
   autoConfig:true,
   // url:"testdata.js"
   data:data_set
 };
 
 const editForm = { 
-  template:"Form"
+  padding:20,
+  scroll:false,
+  width:400,
+  rows:[
+    { view:"template", template:"Edit films", type:"section" },
+    { view:"form", elements:[
+      { view:"text", label:"Title"},
+      { view:"text", label:"Year"},
+      { view:"text", label:"Rating"},
+      { view:"text", label:"Votes"},
+      { margin:5, cols:[
+        { view:"button", label:"Add new" },
+        { view:"button", label:"Clear" }
+      ]}
+    ]}
+  ]
 };
 
 const mainSection = { 
