@@ -1,5 +1,18 @@
 const headerSection = {
-  template:"MyApp Header section"
+  css:"webix_header webix_dark",
+  cols:[
+    {
+      view:"label", label: "MyApp", inputWidth:100, align:"left",
+    },
+    {
+      view:"button", 
+      id:"profile_btn", type:"icon",
+      icon:"wxi-user", label:"Profile",
+      // css:".webix_transparent .webix_button",
+      inputWidth:140, 
+      align:"right"
+    }
+  ]
 };
 
 const sideMenu = { 
@@ -19,7 +32,7 @@ const mainSection = {
 };
 
 const footerSection = { 
-  template:"This software is provided by https://webix.com. All rights reserved (c)"
+  template:"This software is provided by <a href='https://webix.com' target='_blank'>https://webix.com</a>. All rights reserved (c)",
 };
 
 webix.ui({
