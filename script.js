@@ -9,6 +9,13 @@ const data_set = [
 	{ id:6, title:"12 Angry Men", year:1957, votes:164558, rating:8.9, rank:6, category:"Western"}
 ];
 
+var menu_data = [
+	{id: "dashboard", value: "Dashboards" },
+	{id: "users", value:"Users" },
+	{id: "products", value:"Products" },
+	{id: "locations", value:"Locations" },
+];
+
 const headerSection = {
   css:"webix_header webix_dark",
   cols:[
@@ -27,7 +34,20 @@ const headerSection = {
 };
 
 const sideMenu = { 
-  template:"Side menu"
+  rows:[
+    {
+      view: "sidebar",
+      data: menu_data,
+      select:true,
+      on:{
+        onAfterSelect: function(id){
+          webix.message("Selected: "+this.getItem(id).value)
+        }
+      }
+    },
+    { view:"label", 
+      label:"<span class='webix_icon wxi-check'></span> Connected" }
+  ]
 };
 
 const dataBase = { 
@@ -42,7 +62,11 @@ const editForm = {
 };
 
 const mainSection = { 
-  cols:[ sideMenu, dataBase, editForm ]
+  cols:[ 
+    sideMenu, 
+    { view:"resizer" },
+    dataBase, 
+    editForm ]
 };
 
 const footerSection = { 
