@@ -1,24 +1,26 @@
-function addFilm(){
+function addItem(){
   if ($$("add_film_form").validate()) {
-    $$("film_table").add($$("add_film_form").getValues());
-    webix.message("A film was added!");
+    const film = $$("add_film_form").getValues();
+    $$("film_table").add(film);
+    webix.message(`The '${film.title}' film is added! `);
   } else {
     webix.message({ type:"error", text:"Form data is invalid" });
   };
 
 };
 
-function clearInputs(){
+function clearForm(){
   $$("add_film_form").clear();
 };
 
-const addFilmForm = { 
+const filmForm = { 
   padding:20,
   scroll:false,
   complexData:true,
+  borderless: true,
   width:400,
   rows:[
-    { view:"template", template:"Edit films", type:"section" },
+    { view:"template", template:"Edit films", type:"section", },
     { view:"form", 
       id:"add_film_form",
       elements:[
@@ -39,8 +41,8 @@ const addFilmForm = {
           validate:webix.rules.isNumber,
           invalidMessage: "Votes must be a number" },
         { margin:5, cols:[
-          { view:"button", label:"Add new", click:addFilm },
-          { view:"button", label:"Clear", click:clearInputs }
+          { view:"button", label:"Add new", click:addItem },
+          { view:"button", label:"Clear", click:clearForm }
         ]},
       ],
       elementsConfig:{
@@ -53,5 +55,5 @@ const addFilmForm = {
 };
 
 export {
-  addFilmForm,
-}
+  filmForm,
+};
