@@ -6,14 +6,17 @@ const filmTable = {
       view:"datatable",
       id:"film_table",
       autoConfig:true,
-      scroll:"auto",
+      scroll:"y",
       data:data_set,
-      pager:"pager"
+      // pager:"pager",
+      on:{
+        onAfterLoad: function(){ webix.message("Films data loaded"); }
+      }
     },
-    {
-      view:"pager", id:"pager"
-    }
-  ]
+    // {
+    //   view:"pager", id:"pager"
+    // }
+  ],
 };
 
 export {

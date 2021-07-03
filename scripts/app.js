@@ -21,18 +21,30 @@ const headerSection = {
 };
 
 const mainSection = { 
+  autoheight:true,
+  // minHeight:600,
   cols:[ 
     sideMenu, 
     { view:"resizer" },
     filmTable, 
-    filmForm ]
+    filmForm,
+  ]
 };
 
 const footerSection = { 
+  view:"template",
   template:"This software is provided by <a href='https://webix.com' target='_blank'>https://webix.com</a>. All rights reserved (c)",
 };
 
 webix.ui({
  id:"myApp",
- rows:[headerSection, mainSection, footerSection]
+ view:"layout",
+ margin:0,
+ padding:10,
+ autoheight:true,
+ rows:[
+   headerSection,
+   mainSection, 
+   footerSection,
+  ],
 });

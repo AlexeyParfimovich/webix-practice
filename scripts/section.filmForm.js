@@ -14,22 +14,24 @@ function clearForm(){
 };
 
 const filmForm = { 
-  padding:20,
-  scroll:false,
-  complexData:true,
-  borderless: true,
   width:400,
+  padding:20,
+  complexData:true,
   rows:[
-    { view:"template", template:"Edit films", type:"section", },
+    { view:"template",
+      type:"section",
+      template:"Edit films", 
+    },
     { view:"form", 
       id:"add_film_form",
+      borderless: true,
       elements:[
         { view:"text", id:"film_title", 
           name:"title", label:"Title",
           validate: webix.rules.isNotEmpty,
           invalidMessage: "Title can not be empty" },
-        { view:"text", id:"film_year", 
-          name:"year", label:"Year",
+        { view:"datepicker", id:"film_year", 
+          name:"year", label:"Year", type:"year",
           validate:webix.rules.isNumber,
           invalidMessage: "Year must be a number" },
         { view:"text", id:"film_rating", 
