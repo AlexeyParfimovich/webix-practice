@@ -1,13 +1,5 @@
-//import { data_set } from "./testdata";
-
-const data_set = [
-	{ id:1, title:"The Shawshank Redemption", year:1994, votes:678790, rating:9.2, rank:1, category:"Thriller"},
-	{ id:2, title:"The Godfather", year:1972, votes:511495, rating:9.2, rank:2, category:"Crime"},
-	{ id:3, title:"The Godfather: Part II", year:1974, votes:319352, rating:9.0, rank:3, category:"Crime"},
-	{ id:4, title:"The Good, the Bad and the Ugly", year:1966, votes:213030, rating:8.9, rank:4, category:"Western"},
-	{ id:5, title:"Pulp fiction", year:1994, votes:533848, rating:8.9, rank:5, category:"Crime"},
-	{ id:6, title:"12 Angry Men", year:1957, votes:164558, rating:8.9, rank:6, category:"Western"}
-];
+import { data_set } from "./testdata.js";
+import { addFilmForm } from "./addFilmForm.js";
 
 var menu_data = [
 	{id: "dashboard", value: "Dashboards" },
@@ -50,37 +42,29 @@ const sideMenu = {
   ]
 };
 
-const dataBase = {   view:"datatable",
-  autoConfig:true,
-  // url:"testdata.js"
-  data:data_set
-};
-
-const editForm = { 
-  padding:20,
-  scroll:false,
-  width:400,
-  rows:[
-    { view:"template", template:"Edit films", type:"section" },
-    { view:"form", elements:[
-      { view:"text", label:"Title"},
-      { view:"text", label:"Year"},
-      { view:"text", label:"Rating"},
-      { view:"text", label:"Votes"},
-      { margin:5, cols:[
-        { view:"button", label:"Add new" },
-        { view:"button", label:"Clear" }
-      ]}
-    ]}
+const dataBase = {  
+  rows:[ 
+    {
+      view:"datatable",
+      id:"film_table",
+      autoConfig:true,
+      scroll:"auto",
+      data:data_set,
+      pager:"pager"
+    },
+    {
+      view:"pager", id:"pager"
+    }
   ]
 };
+
 
 const mainSection = { 
   cols:[ 
     sideMenu, 
     { view:"resizer" },
     dataBase, 
-    editForm ]
+    addFilmForm ]
 };
 
 const footerSection = { 
