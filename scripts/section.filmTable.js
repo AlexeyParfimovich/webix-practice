@@ -10,7 +10,9 @@ const filmTable = {
       data:data_set,
       // pager:"pager",
       on:{
-        onAfterLoad: function(){ webix.message("Films data loaded"); }
+        onAfterLoad: function(){ 
+          webix.message("Films data loaded"); 
+        }
       }
     },
     // {

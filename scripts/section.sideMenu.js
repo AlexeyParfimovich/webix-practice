@@ -11,6 +11,7 @@ const sideMenu = {
       view: "sidebar",
       data: menu_data,
       borderless: true,
+      css:"side_menu",
       select:true,
       on:{
         onAfterSelect: function(id){
@@ -19,7 +20,11 @@ const sideMenu = {
       }
     },
     { view:"label", 
-      label:"<span class='webix_icon wxi-check'></span> Connected" }
+      id:"connection_lbl",
+      label:"<span class='webix_icon wxi-check'></span> Connected",
+      css:"connection_label",
+      align:"center",
+    }
   ]
 };
 
