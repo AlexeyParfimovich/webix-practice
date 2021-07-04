@@ -11,6 +11,7 @@ const sideMenu = {
       view: "sidebar",
       data: menu_data,
       borderless: true,
+      css:"side_menu",
       select:true,
       on:{
         onAfterSelect: function(id){

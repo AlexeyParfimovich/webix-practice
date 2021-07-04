@@ -1,12 +1,36 @@
-.form_button button:hover{
-  background: #1CA1C1 !important;
-  color:#FFFFFF;
+:root {
+  --header-color: #657584;
+  --side-menu-color: #f4f5f9;
+  --button-hover-color: #1CA1C1;
+  --button-text-color: #FFFFFF;
+  --label-color: green;
+
+}
+
+.profile_button button{
+  background: var(--header-color) !important;
+}
+
+.webix_sidebar{
+  background-color: var(--side-menu-color) !important;
 }
 
 .connection_label .webix_el_box{
-  color: green !important;
+  background-color: var(--side-menu-color) !important;
+  color: var(--label-color) !important;
+}
+
+.form_button button:hover{
+  background: var(--button-hover-color) !important;
+  color: var(--button-text-color);
+}
+
+.connection_label .webix_el_box{
+  color: var(--label-color) !important;
 }
 
 .footer_text .webix_template{
   text-align: center !important;
+  border-bottom: 1px solid;
+  height: auto;
 }

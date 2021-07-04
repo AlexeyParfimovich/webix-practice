@@ -14,7 +14,8 @@ const header = {
       icon:"wxi-user", 
       label:"Profile",
       inputWidth:140, 
-      align:"right"
+      align:"right",
+      css:"profile_button",
     }
   ]
 };
