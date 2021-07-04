@@ -3,26 +3,12 @@ import { filmForm } from "./section.filmForm.js";
 import { sideMenu } from "./section.sideMenu.js";
 import { filmTable } from "./section.filmTable.js";
 
-const headerSection = {
-  css:"webix_header webix_dark",
-  cols:[
-    {
-      view:"label", label: "MyApp", inputWidth:100, align:"left",
-    },
-    {
-      view:"button", 
-      id:"profile_btn", type:"icon",
-      icon:"wxi-user", label:"Profile",
-      // css:".webix_transparent .webix_button",
-      inputWidth:140, 
-      align:"right"
-    }
-  ]
-};
+import { header } from "./header.js";
+import { footer } from "./footer.js";
 
-const mainSection = { 
-  autoheight:true,
+const section = { 
   // minHeight:600,
+  gravity:5,
   cols:[ 
     sideMenu, 
     { view:"resizer" },
@@ -31,20 +17,13 @@ const mainSection = {
   ]
 };
 
-const footerSection = { 
-  view:"template",
-  template:"This software is provided by <a href='https://webix.com' target='_blank'>https://webix.com</a>. All rights reserved (c)",
-};
-
 webix.ui({
  id:"myApp",
  view:"layout",
- margin:0,
- padding:10,
- autoheight:true,
+ padding:5,
  rows:[
-   headerSection,
-   mainSection, 
-   footerSection,
+   header,
+   section, 
+   footer,
   ],
 });

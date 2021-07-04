@@ -1,0 +1,12 @@
+.form_button button:hover{
+  background: #1CA1C1 !important;
+  color:#FFFFFF;
+}
+
+.connection_label .webix_el_box{
+  color: green !important;
+}
+
+.footer_text .webix_template{
+  text-align: center !important;
+}

@@ -19,7 +19,11 @@ const sideMenu = {
       }
     },
     { view:"label", 
-      label:"<span class='webix_icon wxi-check'></span> Connected" }
+      id:"connection_lbl",
+      label:"<span class='webix_icon wxi-check'></span> Connected",
+      css:"connection_label",
+      align:"center",
+    }
   ]
 };
 
