@@ -1,6 +1,7 @@
 function addItem(){
   if ($$("add_film_form").validate()) {
     const film = $$("add_film_form").getValues();
+    film.year = film.year.getFullYear();
     $$("film_table").add(film);
     webix.message(`The '${film.title}' film is added! `);
   } else {
@@ -38,7 +39,8 @@ const filmForm = {
           name:"year", 
           label:"Year", 
           type:"year",
-          validate:webix.rules.isNumber,
+          format: "%Y",
+          validate:webix.rules.isNotNull,
           invalidMessage: "Year must be a number", 
         },
         { view:"text", 
