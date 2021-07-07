@@ -7,13 +7,17 @@ import { header } from "./header.js";
 import { footer } from "./footer.js";
 
 const section = { 
-  // minHeight:600,
-  gravity:5,
-  cols:[ 
-    sideMenu, 
-    { view:"resizer" },
-    filmTable, 
-    filmForm,
+  rows:[
+    { 
+      // autoheight: true,
+      minHeight: 600,
+      cols:[ 
+        sideMenu, 
+        { view:"resizer" },
+        filmTable, 
+        filmForm,
+      ]},
+    {}
   ]
 };
 
