@@ -76,7 +76,8 @@ const filmForm = {
           'onChange': function(newv, oldv){ this.validate(); }
         }
       }
-    }
+    },
+    {},
   ]
 };
 
